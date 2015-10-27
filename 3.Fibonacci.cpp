@@ -5,7 +5,7 @@
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Russian");
-	float m[39], pred, posl;
+	float m[39], pred, posl; // зачем массив????
 	cout << "Последующего к предыдущему       Предыдущего к последующему" << "\n";
 	cout << "                   1                   1                  " << "\n";
 	m[0] = 1;
