@@ -149,7 +149,7 @@ void rebuild2(int N, int A[]){
 
 int main(){
 	setlocale(LC_ALL, "Russian");
-	const int N=10;
+	const int N=40000;
 	int x=0, A[N], B[N];
 	mas(N, A);
 	xorshift(x);
