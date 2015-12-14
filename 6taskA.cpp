@@ -11,7 +11,7 @@ void push(int A[], int &top, int element) {
 	}
 }
 // функция для удаления элемента из стека
-void pop(int A[], int &top) {
+void pop(int A[], int &top) {//только не УДАЛЕНИЯ, а ОБРАБОТКИ!!!! Она должна возвращать элемент из вершины!!!!
 	if (top > 0)
 		top--;
 	else 
