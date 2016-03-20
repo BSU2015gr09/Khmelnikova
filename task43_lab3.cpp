@@ -32,14 +32,14 @@ void output()
 }
 //поиск буквы 'а'(английской) и подсчет слов с этой буквой
 void searchA(int len, int tmplen, int &count) {
-	char* newstr = nullptr;
-	newstr = new char [N];// строка, в которой будут хранится слова по отдельности 
-	strncpy(newstr, str+tmplen, len);// заполнение строки словом 
-	newstr[len]='\0';
+	char* slovo = nullptr;
+	slovo = new char [N];// строка, в которой будут храниться слова по отдельности 
+	strncpy(slovo, str+tmplen, len);// заполнение строки словом 
+	slovo[len]='\0';
 	char *symbol = nullptr;
-	symbol = strchr(newstr, 'a');// поиск буквы а
+	symbol = strchr(slovo, 'a');// поиск буквы а
 	if (symbol!=NULL) {
-		cout << newstr << "\n";
+		cout << slovo << "\n";
 		count++;
 	}
 }
