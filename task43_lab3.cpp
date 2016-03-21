@@ -1,7 +1,7 @@
 ﻿#include <iostream>
-#include <string>
 #include <cstring>
 #include <clocale>
+#include <fstream>
 using namespace std;
 const int N = 1000;
 char* str = nullptr;
@@ -9,7 +9,7 @@ char* tmp = nullptr;
 //напечатать задание
 void printTask() 
 {
-	cout << "Определить, сколько слов в строке содержат хотя бы одну букву A. " << "\n";
+	cout << "Определить, сколько слов в строке содержат хотя бы одну букву a(английскую). " << "\n";
 	cout << " Вывести такие слова на экран." << "\n";
 }
 //ввести строку
@@ -24,6 +24,12 @@ void randomString()
 {
 	str = "January,February;March,April,May!June,July,August:September,October,November,December.";
 }
+//добавляется строка из файла 
+void fileString()
+{
+	ifstream myfile("file.txt");
+	myfile.getline(str, N);
+}
 // вывод строки
 void output() 
 {
@@ -32,14 +38,14 @@ void output()
 }
 //поиск буквы 'а'(английской) и подсчет слов с этой буквой
 void searchA(int len, int tmplen, int &count) {
-	char* newstr = nullptr;
-	newstr = new char [N];// строка, в которой будут хранится слова по отдельности 
-	strncpy(newstr, str+tmplen, len);// заполнение строки словом 
-	newstr[len]='\0';
+	char* slovo = nullptr;
+	slovo = new char [N];// строка, в которой будут храниться слова по отдельности 
+	strncpy(slovo, str+tmplen, len);// заполнение строки словом 
+	slovo[len]='\0';
 	char *symbol = nullptr;
-	symbol = strchr(newstr, 'a');// поиск буквы а
+	symbol = strchr(slovo, 'a');// поиск буквы а (английской)
 	if (symbol!=NULL) {
-		cout << newstr << "\n";
+		cout << slovo << "\n";
 		count++;
 	}
 }
@@ -53,7 +59,7 @@ void slova()
 		len = strcspn(tmp, razdel);
 		searchA(len, tmplen, count);
 		tmplen=tmplen + len + 1; // начало нового слова
-		tmp = tmp + len +1;// конец слова
+		tmp = tmp + len + 1;// конец слова
 	} while(*tmp);
 	cout << "Количество слов с буквой 'а' : " << count << "\n";
 }
@@ -68,16 +74,18 @@ int main()
 		cout << "1 - респечатать задание" << "\n";
 		cout << "2 - ввести строку " << "\n";
 		cout << "3 - взять стандартную строку " << "\n";
-		cout << "4 - вывести строку " << "\n";
-		cout << "5 - выполнить задание" << "\n";
+		cout << "4 - строка из файла " << "\n";
+		cout << "5 - вывести строку " << "\n";
+		cout << "6 - выполнить задание" << "\n";
 		cout << "0 - выход" << "\n";
 		cin >> k;
 	switch(k) {
 	case 1: printTask(); break;
 	case 2: enterString(); break;
 	case 3: randomString(); break;
-	case 4: output(); break;
-	case 5: slova(); break;
+	case 4: fileString(); break;
+	case 5: output(); break;
+	case 6: slova(); break;
 	case 0: return 1;
 	default: cout << "Неверный ввод!" << "\n";	
 	}
