@@ -43,15 +43,7 @@ void searchA(int len, int tmplen, int &count) {
 	strncpy(slovo, str+tmplen, len);// заполнение строки словом 
 	slovo[len]='\0';
 	char *symbol = nullptr;
-<<<<<<< HEAD
-<<<<<<< HEAD
 	symbol = strchr(slovo, 'a');// поиск буквы а (английской)
-=======
-	symbol = strchr(slovo, 'a');// поиск буквы а
->>>>>>> 7af7be96446f8ff846b5961f95f73c7412209276
-=======
-	symbol = strchr(slovo, 'a');// поиск буквы а
->>>>>>> 7af7be96446f8ff846b5961f95f73c7412209276
 	if (symbol!=NULL) {
 		cout << slovo << "\n";
 		count++;
