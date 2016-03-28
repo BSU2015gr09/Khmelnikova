@@ -22,7 +22,7 @@ void enterString()
 //произвольная строка с разделительными знаками 
 void randomString()
 {
-	str = "January,February;March,April,May!June,July,August:September,October,November,December.";
+	str = "January,February;March,April,May!June,July,August:September,October,November,December.";// Будут тут проблемы. Точнее не тут, а из-за этого!!!
 }
 //добавляется строка из файла 
 void fileString()
