@@ -22,13 +22,14 @@ void enterString()
 //произвольная строка с разделительными знаками 
 void randomString()
 {
-	str = "January,February;March,April,May!June,July,August:September,October,November,December.";
+	strcpy(str,"January,February;March,April,May!June,July,August:September,October,November,December.");
 }
 //добавляется строка из файла 
 void fileString()
 {
 	ifstream myfile("file.txt");
 	myfile.getline(str, N);
+	myfile.close();
 }
 // вывод строки
 void output() 
